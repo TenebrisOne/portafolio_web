@@ -79,6 +79,22 @@
             color: var(--text-secondary);
         }
 
+        .btnHero {
+            background: var(--accent);
+            color: var(--text-primary);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+
+        .btnHero:hover {
+            transform: scale(1.05);
+            background: #6a1b9a;
+        }
+
         .btn {
             background: var(--accent);
             color: var(--text-primary);
