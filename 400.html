@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#06060c">
+<meta name="description" content="El servidor no pudo procesar tu petición porque contiene una sintaxis inválida o parámetros malformados. Revisa la dirección e inténtalo de nuevo.">
+<meta property="og:title" content="Error 400 · Solicitud incorrecta">
+<meta property="og:description" content="El servidor no pudo procesar tu petición porque contiene una sintaxis inválida o parámetros malformados. Revisa la dirección e inténtalo de nuevo.">
+<title>Error 400 · Solicitud incorrecta — Cristian Ruiz</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%2306060c%27%20stroke%3D%27%2300e5ff%27%20stroke-width%3D%272%27%2F%3E%3Ctext%20x%3D%2732%27%20y%3D%2742%27%20font-family%3D%27monospace%27%20font-size%3D%2721%27%20font-weight%3D%27bold%27%20fill%3D%27%2300e5ff%27%20text-anchor%3D%27middle%27%3E400%3C%2Ftext%3E%3C%2Fsvg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Orbitron:wght@600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    fontFamily: {
+      mono: ['JetBrains Mono', 'monospace'],
+      display: ['Space Grotesk', 'sans-serif'],
+      tech: ['Orbitron', 'sans-serif']
+    },
+    colors: {
+      void: '#06060c', abyss: '#0a0d16', surface: '#0f131f',
+      cyan: '#00e5ff', amber: '#ff6d3a', violet: '#7c4dff', steel: '#8a9bb5'
+    },
+    screens: { xs: '475px' }
+  } } };
+</script>
+<style>
+  :root { --accent: #00e5ff; --accent-rgb: 0,229,255; }
+  html { scroll-behavior: smooth; }
+  body { background-color: #06060c; }
+  ::selection { background: rgba(var(--accent-rgb), .28); color: #ffffff; }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #0a0d16; }
+  ::-webkit-scrollbar-thumb { background: rgba(var(--accent-rgb), .25); border-radius: 8px; border: 2px solid #0a0d16; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(var(--accent-rgb), .45); }
+
+  .accent-text { color: var(--accent); }
+  .accent-soft { color: rgba(var(--accent-rgb), .85); }
+
+  .noise-overlay { position: fixed; inset: 0; z-index: 60; pointer-events: none; opacity: .05; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  .scanline { position: fixed; left: 0; right: 0; top: -140px; height: 140px; z-index: 55; pointer-events: none; background: linear-gradient(to bottom, transparent, rgba(var(--accent-rgb), .05), transparent); animation: scan 8s linear infinite; }
+  @keyframes scan { to { transform: translateY(calc(100vh + 280px)); } }
+
+  .glitch { position: relative; display: inline-block; text-shadow: 0 0 34px rgba(var(--accent-rgb), .35), 0 0 90px rgba(var(--accent-rgb), .18); }
+  .glitch::before, .glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; text-shadow: none; }
+  .glitch::before { color: var(--accent); animation: glitch-a 4.2s steps(1) infinite; }
+  .glitch::after { color: #ff6d3a; animation: glitch-b 4.2s steps(1) infinite; }
+  @keyframes glitch-a {
+    0%, 6% { opacity: .85; clip-path: inset(6% 0 82% 0); transform: translate(-5px, -2px); }
+    7%, 13% { opacity: 0; }
+    38%, 44% { opacity: .85; clip-path: inset(58% 0 22% 0); transform: translate(5px, 1px); }
+    45%, 100% { opacity: 0; }
+  }
+  @keyframes glitch-b {
+    0%, 5% { opacity: .8; clip-path: inset(74% 0 6% 0); transform: translate(4px, 2px); }
+    6%, 12% { opacity: 0; }
+    52%, 58% { opacity: .8; clip-path: inset(24% 0 62% 0); transform: translate(-4px, -1px); }
+    59%, 100% { opacity: 0; }
+  }
+
+  .holo-card { position: relative; background: linear-gradient(145deg, rgba(15,19,31,.92), rgba(10,13,22,.55)); border: 1px solid rgba(var(--accent-rgb), .16); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); overflow: hidden; transition: border-color .4s ease, transform .4s ease, box-shadow .4s ease; }
+  .holo-card::after { content: ''; position: absolute; top: 0; left: -80%; width: 55%; height: 100%; background: linear-gradient(105deg, transparent, rgba(var(--accent-rgb), .1), transparent); transform: skewX(-18deg); transition: left .8s ease; pointer-events: none; }
+  .holo-card:hover::after { left: 135%; }
+  .holo-card:hover { border-color: rgba(var(--accent-rgb), .42); transform: translateY(-4px); box-shadow: 0 14px 44px -14px rgba(var(--accent-rgb), .3); }
+
+  .corner-accent::before, .corner-accent::after { content: ''; position: absolute; width: 16px; height: 16px; z-index: 1; pointer-events: none; }
+  .corner-accent::before { top: -1px; left: -1px; border-top: 2px solid var(--accent); border-left: 2px solid var(--accent); }
+  .corner-accent::after { bottom: -1px; right: -1px; border-bottom: 2px solid var(--accent); border-right: 2px solid var(--accent); }
+
+  .status-badge { display: inline-flex; align-items: center; gap: .55rem; padding: .45rem .85rem; border-radius: .5rem; background: rgba(15,19,31,.72); border: 1px solid rgba(var(--accent-rgb), .28); backdrop-filter: blur(8px); font-size: 11px; letter-spacing: .18em; color: #c6d1e2; }
+  .status-badge .num { color: var(--accent); font-weight: 700; }
+  .pulse-dot { position: relative; display: inline-block; width: 7px; height: 7px; border-radius: 9999px; background: var(--accent); box-shadow: 0 0 10px rgba(var(--accent-rgb), .8); }
+  .pulse-dot::before { content: ''; position: absolute; inset: -3px; border-radius: 9999px; background: rgba(var(--accent-rgb), .4); animation: ping 2.2s cubic-bezier(0,0,.2,1) infinite; }
+  @keyframes ping { 75%, 100% { transform: scale(2.6); opacity: 0; } }
+
+  .terminal-cursor { display: inline-block; width: .55em; height: 1.1em; margin-left: 3px; background: var(--accent); vertical-align: text-bottom; box-shadow: 0 0 10px rgba(var(--accent-rgb), .7); animation: blink 1.05s steps(1) infinite; }
+  @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+  .term-line { min-height: 1.7em; white-space: pre-wrap; word-break: break-word; }
+  .t-seg.t-prompt { color: var(--accent); font-weight: 700; }
+  .t-seg.t-ok { color: #00e5ff; }
+  .t-seg.t-fail { color: #ff6d3a; }
+  .t-seg.t-dim { color: rgba(138,155,181,.55); }
+  .t-seg.t-txt { color: #8a9bb5; }
+  .t-seg.t-white { color: #e6edf7; }
+  .t-seg.t-accent { color: var(--accent); }
+  .term-body { min-height: calc(5 * 1.7em + 2.6rem); }
+
+  .chip-icon { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 2rem; height: 2rem; border-radius: .5rem; color: var(--accent); background: rgba(var(--accent-rgb), .08); border: 1px solid rgba(var(--accent-rgb), .3); box-shadow: inset 0 0 14px rgba(var(--accent-rgb), .07); }
+  .chip-icon svg { width: 1rem; height: 1rem; }
+
+  .btn-primary { position: relative; overflow: hidden; background: var(--accent); color: #06060c; box-shadow: 0 0 26px rgba(var(--accent-rgb), .35); transition: box-shadow .3s ease, transform .3s ease; }
+  .btn-primary:hover { box-shadow: 0 0 48px rgba(var(--accent-rgb), .55); transform: translateY(-2px); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-ghost { border: 1px solid rgba(255,255,255,.15); color: #c6d1e2; background: transparent; cursor: pointer; transition: border-color .3s ease, color .3s ease, background .3s ease, transform .3s ease; }
+  .btn-ghost:hover { border-color: rgba(var(--accent-rgb), .6); color: #fff; background: rgba(var(--accent-rgb), .08); transform: translateY(-2px); }
+  .btn-primary svg, .btn-ghost svg { width: 1rem; height: 1rem; }
+
+  .fade-up { opacity: 0; animation: fadeUp .8s cubic-bezier(.2,.8,.2,1) forwards; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+
+  .kbd-hint kbd { font-family: inherit; color: rgba(198,209,226,.8); border: 1px solid rgba(255,255,255,.14); border-bottom-width: 2px; border-radius: 4px; padding: 1px 6px; background: rgba(15,19,31,.7); }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+<noscript>
+  <style>
+    .fade-up { opacity: 1 !important; }
+    .t-seg { display: none; }
+    .term-line::before { content: attr(data-full); color: #8a9bb5; white-space: pre-wrap; }
+    #term-cursor { display: none !important; }
+  </style>
+</noscript>
+</head>
+<body class="bg-void text-steel font-mono antialiased overflow-x-hidden">
+
+<canvas id="fx" class="fixed inset-0 z-0 pointer-events-none" aria-hidden="true"></canvas>
+<div class="noise-overlay" aria-hidden="true"></div>
+<div class="scanline" aria-hidden="true"></div>
+
+<div class="relative z-10 min-h-screen flex flex-col">
+
+  <header class="w-full max-w-6xl mx-auto flex items-center justify-between px-5 sm:px-8 py-5">
+    <a href="/" data-home class="flex items-center gap-3 group">
+      <span class="font-tech font-bold text-base sm:text-lg text-white tracking-[0.25em]">CR<span class="accent-text">_</span></span>
+      <span class="hidden sm:inline text-[10px] tracking-[0.3em] text-steel/50 group-hover:text-steel/80 transition-colors">// BAD REQUEST</span>
+    </a>
+    <div class="status-badge">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span>STATUS: <span class="num">400</span></span>
+    </div>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center px-5 sm:px-6 py-8 sm:py-10">
+    <div class="w-full max-w-3xl text-center">
+
+      <div class="fade-up" style="animation-delay:.1s">
+        <p class="text-[10px] sm:text-xs tracking-[0.45em] text-steel/60 mb-3 sm:mb-4">ERROR HTTP · BAD REQUEST</p>
+        <h1 class="glitch font-tech font-black text-white leading-[0.95] text-[clamp(5.5rem,21vw,10.5rem)]" data-text="400" aria-label="Error 400">400</h1>
+      </div>
+
+      <h2 class="fade-up font-display font-bold text-white text-2xl sm:text-3xl md:text-4xl mt-5 sm:mt-6" style="animation-delay:.22s">Solicitud incorrecta</h2>
+      <p class="fade-up text-sm sm:text-base text-steel leading-relaxed mt-3 sm:mt-4 max-w-xl mx-auto" style="animation-delay:.3s">El servidor no pudo procesar tu petición porque contiene una sintaxis inválida o parámetros malformados. Revisa la dirección e inténtalo de nuevo.</p>
+
+      <div class="fade-up corner-accent relative rounded-lg mt-9 sm:mt-12 text-left" style="animation-delay:.4s">
+        <div class="holo-card rounded-lg">
+          <div class="flex items-center gap-2 px-4 sm:px-5 py-3 border-b border-white/[.07]">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></span>
+            <span class="ml-3 text-[11px] sm:text-xs text-steel/60 truncate">cristian@cr-system: ~/var/log/400.log</span>
+            <span class="ml-auto hidden xs:inline text-[10px] tracking-[0.25em] accent-soft">SHELL — BASH</span>
+          </div>
+          <div class="term-body px-4 sm:px-5 py-4 sm:py-5 text-[12.5px] sm:text-sm leading-[1.7]">
+<div class="term-line" data-full="$ GET /buscar?q=??? HTTP/1.1"><span class="t-seg t-prompt" data-text="$ "></span><span class="t-seg t-white" data-text="GET "></span><span class="t-seg t-accent" data-text="/buscar?q=???"></span><span class="t-seg t-dim" data-text=" HTTP/1.1"></span></div>
+<div class="term-line" data-full="[FAIL]  sintaxis de la solicitud inválida"><span class="t-seg t-fail" data-text="[FAIL]  "></span><span class="t-seg t-txt" data-text="sintaxis de la solicitud inválida"></span></div>
+<div class="term-line" data-full="[400]   el servidor no pudo interpretar la petición"><span class="t-seg t-fail" data-text="[400]   "></span><span class="t-seg t-txt" data-text="el servidor no pudo interpretar la petición"></span></div>
+<div class="term-line" data-full="       detalle: parámetros malformados o incompletos"><span class="t-seg t-dim" data-text="       detalle: parámetros malformados o incompletos"></span></div>
+<div class="term-line" data-full="$ sugerencia: revisa la URL y vuelve a intentarlo"><span class="t-seg t-prompt" data-text="$ "></span><span class="t-seg t-dim" data-text="sugerencia: revisa la URL y vuelve a intentarlo"></span></div>
+<span id="term-cursor" class="terminal-cursor" style="display:none"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8 sm:mt-10 text-left">
+<div class="holo-card rounded-lg p-4 sm:p-5 fade-up" style="animation-delay:0.50s">
+  <div class="flex items-center gap-2.5 mb-2.5">
+    <span class="chip-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+    <h3 class="font-display font-semibold text-white text-sm sm:text-[15px]">Revisa la URL</h3>
+  </div>
+  <p class="text-[13px] sm:text-sm text-steel/85 leading-relaxed">La solicitud contiene caracteres no válidos o una estructura incorrecta.</p>
+</div>
+<div class="holo-card rounded-lg p-4 sm:p-5 fade-up" style="animation-delay:0.62s">
+  <div class="flex items-center gap-2.5 mb-2.5">
+    <span class="chip-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <h3 class="font-display font-semibold text-white text-sm sm:text-[15px]">Verifica parámetros</h3>
+  </div>
+  <p class="text-[13px] sm:text-sm text-steel/85 leading-relaxed">Algún parámetro de la petición está incompleto o malformado.</p>
+</div>
+<div class="holo-card rounded-lg p-4 sm:p-5 fade-up" style="animation-delay:0.74s">
+  <div class="flex items-center gap-2.5 mb-2.5">
+    <span class="chip-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+    <h3 class="font-display font-semibold text-white text-sm sm:text-[15px]">Vuelve al inicio</h3>
+  </div>
+  <p class="text-[13px] sm:text-sm text-steel/85 leading-relaxed">Reinicia tu navegación desde una ruta válida del sitio.</p>
+</div>
+      </div>
+
+      <div class="fade-up flex flex-col xs:flex-row items-stretch xs:items-center justify-center gap-3 sm:gap-4 mt-9 sm:mt-11" style="animation-delay:.85s">
+<a href="/" data-home class="btn-primary inline-flex items-center justify-center gap-2.5 w-full xs:w-auto rounded-md px-8 py-3.5 text-xs sm:text-[13px] font-bold tracking-[0.22em]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>VOLVER AL INICIO</span></a>
+<a href="https://github.com/TenebrisOne" target="_blank" rel="noopener noreferrer" class="btn-ghost inline-flex items-center justify-center gap-2.5 w-full xs:w-auto rounded-md px-8 py-3.5 text-xs sm:text-[13px] font-bold tracking-[0.22em]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg><span>GITHUB</span></a>
+      </div>
+
+      <p class="fade-up kbd-hint mt-7 text-[10px] tracking-[0.3em] text-steel/40" style="animation-delay:.95s">PULSA <kbd>ENTER</kbd> PARA VOLVER AL INICIO</p>
+
+    </div>
+  </main>
+
+  <footer class="w-full max-w-6xl mx-auto px-5 sm:px-8 py-6">
+    <div class="flex flex-col xs:flex-row items-center justify-between gap-2 text-[9.5px] sm:text-[11px] tracking-[0.22em] text-steel/45">
+      <span>CRISTIAN RUIZ · DESARROLLADOR DE SOFTWARE · © 2026</span>
+      <span>SESSION: 400 · NODE: CR-01 · <span id="ft-clock">--:--:--</span></span>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(() => {
+  'use strict';
+  const CODE = '400';
+  const TAG = 'BAD REQUEST';
+  const ACCENT = '#00e5ff';
+  const RGB = '0,229,255';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const HOME = window.location.protocol === 'file:' ? 'index.html' : '/';
+
+  /* ---- fondo: grid + partículas ---- */
+  const canvas = document.getElementById('fx');
+  const ctx = canvas.getContext('2d');
+  let W = 0, H = 0, particles = [];
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth; H = window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.min(110, Math.floor(W * H / 16000));
+    particles = Array.from({ length: count }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      r: Math.random() * 1.4 + 0.4,
+      vx: (Math.random() - 0.5) * 0.18, vy: (Math.random() - 0.5) * 0.18,
+      a: Math.random() * 0.5 + 0.15,
+      ph: Math.random() * Math.PI * 2,
+      acc: Math.random() < 0.18
+    }));
+  }
+
+  function paint(t) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(' + RGB + ',0.045)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (let x = 64; x < W; x += 64) { ctx.moveTo(x + 0.5, 0); ctx.lineTo(x + 0.5, H); }
+    for (let y = 64; y < H; y += 64) { ctx.moveTo(0, y + 0.5); ctx.lineTo(W, y + 0.5); }
+    ctx.stroke();
+    const g = ctx.createRadialGradient(W / 2, H * 0.32, 0, W / 2, H * 0.32, Math.max(W, H) * 0.75);
+    g.addColorStop(0, 'rgba(' + RGB + ',0.075)');
+    g.addColorStop(0.55, 'rgba(' + RGB + ',0.02)');
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+    for (const p of particles) {
+      if (!reduced) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < -8) p.x = W + 8; else if (p.x > W + 8) p.x = -8;
+        if (p.y < -8) p.y = H + 8; else if (p.y > H + 8) p.y = -8;
+      }
+      const tw = reduced ? p.a : p.a * (0.55 + 0.45 * Math.sin(t / 900 + p.ph));
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.acc ? 'rgba(' + RGB + ',' + tw.toFixed(3) + ')' : 'rgba(198,209,226,' + (tw * 0.8).toFixed(3) + ')';
+      if (p.acc) { ctx.shadowColor = 'rgba(' + RGB + ',0.9)'; ctx.shadowBlur = 8; } else { ctx.shadowBlur = 0; }
+      ctx.fill();
+    }
+    ctx.shadowBlur = 0;
+  }
+
+  function loop(t) { paint(t); requestAnimationFrame(loop); }
+  window.addEventListener('resize', resize);
+  resize();
+  if (reduced) { paint(0); } else { requestAnimationFrame(loop); }
+
+  /* ---- terminal: efecto de escritura ---- */
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+  const lines = Array.from(document.querySelectorAll('.term-line'));
+  const cursor = document.getElementById('term-cursor');
+
+  async function typeAll() {
+    for (const line of lines) {
+      for (const seg of line.querySelectorAll('.t-seg')) {
+        const full = seg.dataset.text || '';
+        if (reduced) { seg.textContent = full; continue; }
+        for (let i = 1; i <= full.length; i++) {
+          seg.textContent = full.slice(0, i);
+          await sleep(full.charAt(i - 1) === ' ' ? 8 : 13);
+        }
+      }
+      if (!reduced) await sleep(150);
+    }
+    const last = lines[lines.length - 1];
+    if (last && cursor) last.appendChild(cursor);
+  }
+
+  /* ---- reloj del footer ---- */
+  const clock = document.getElementById('ft-clock');
+  function tick() {
+    if (clock) clock.textContent = new Date().toLocaleTimeString('es-CO', { hour12: false });
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ---- accesos rápidos ---- */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.isComposing && !e.target.closest('a,button')) {
+      window.location.href = HOME;
+    }
+  });
+
+  /* ---- vista local (file://) ---- */
+  if (window.location.protocol === 'file:') {
+    document.querySelectorAll('a[data-home]').forEach(a => { a.setAttribute('href', 'index.html'); });
+  }
+
+  typeAll();
+
+  console.log('%c[CR-SYSTEM] ERROR ' + CODE + ' — ' + TAG, 'color:' + ACCENT + ';font-weight:bold;font-size:14px;font-family:monospace;');
+  console.log('%c¿Curioseando los logs? Yo también construyo las soluciones → github.com/TenebrisOne', 'color:#8a9bb5;font-family:monospace;');
+})();
+</script>
+</body>
+</html>
