@@ -6,6 +6,7 @@
   <title>Cristian Ruiz | Desarrollador de Software en Bogotá</title>
   <meta name="description" content="Portafolio de Cristian Ruiz, desarrollador de software en Bogotá. Experiencia en PHP, Python, MySQL, Flask, Odoo, APIs, integraciones, automatización y Linux.">
   <meta name="author" content="Cristian Camilo Ruiz Ospina">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="keywords" content="desarrollador web, backend, Odoo, Flask, Python, PHP, MySQL, integraciones, automatización, portafolio, Colombia">
   <meta name="theme-color" content="#05070d">
   <link rel="canonical" href="https://cristianruiz-dev.web.app/">
@@ -26,9 +27,7 @@
   <meta name="twitter:description" content="Portafolio de desarrollo de software: PHP, Python, MySQL, Flask, Odoo, APIs, integraciones, automatización y Linux.">
   <meta name="twitter:image" content="https://cristianruiz-dev.web.app/assets/images/og-image.webp?v=20261024-2">
   <meta name="twitter:image:alt" content="Portafolio profesional de Cristian Camilo Ruiz Ospina">
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link rel="icon" type="image/png" href="assets/favicon.png" sizes="32x32">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%2305070d'/%3E%3Cpath%20d='M15%2021l11%2011-11%2011'%20stroke='%2300e5ff'%20stroke-width='5'%20fill='none'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Cpath%20d='M33%2043h17'%20stroke='%2300e5ff'%20stroke-width='5'%20stroke-linecap='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -36,6 +35,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://cristianruiz-dev.web.app/#person",
     "name": "Cristian Camilo Ruiz Ospina",
     "alternateName": "Cristian Ruiz",
     "jobTitle": "Desarrollador de Software",
@@ -47,6 +47,18 @@
     "sameAs": ["https://github.com/TenebrisOne", "https://www.linkedin.com/in/cristian-ruiz-developer/"],
     "knowsAbout": ["Python", "Flask", "PHP", "MySQL", "Odoo ERP", "Linux", "APIs REST", "Webhooks", "Automatización"],
     "address": { "@type": "PostalAddress", "addressLocality": "Bogotá", "addressCountry": "CO" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://cristianruiz-dev.web.app/#website",
+    "url": "https://cristianruiz-dev.web.app/",
+    "name": "Portafolio de Cristian Ruiz",
+    "description": "Portafolio profesional de Cristian Ruiz, desarrollador de software en Bogotá especializado en PHP, Python, MySQL, Odoo, APIs e integraciones.",
+    "inLanguage": "es-CO",
+    "author": { "@id": "https://cristianruiz-dev.web.app/#person" }
   }
   </script>
   <style>
@@ -203,10 +215,10 @@ input { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
   cursor: pointer;
   /* Failsafe: si el JS no carga, el boot se auto-descarta */
-  animation: bootFailsafe 0.5s ease 7s forwards;
+  animation: bootFailsafe 0.3s ease 1.5s forwards;
 }
 @keyframes bootFailsafe { to { opacity: 0; visibility: hidden; } }
 #boot.done { opacity: 0; pointer-events: none; }
@@ -257,7 +269,7 @@ input { font-family: inherit; }
 .boot-skip {
   margin-top: 12px;
   font-size: 9px;
-  color: var(--dim);
+  color: var(--muted);
   letter-spacing: 0.25em;
   text-align: center;
   text-transform: uppercase;
@@ -1265,11 +1277,11 @@ section { scroll-margin-top: calc(var(--topbar-h) + 14px); }
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--dim);
+  color: var(--muted);
   transition: color 0.25s;
 }
 .f-links a:hover { color: var(--cyan); }
-.f-meta { font-family: var(--font-m); font-size: 10.5px; color: var(--dim); letter-spacing: 0.12em; }
+.f-meta { font-family: var(--font-m); font-size: 10.5px; color: var(--muted); letter-spacing: 0.12em; }
 
 /* ---------- Modals ---------- */
 .overlay {
@@ -1529,7 +1541,7 @@ section { scroll-margin-top: calc(var(--topbar-h) + 14px); }
 
 <!-- ============ TOPBAR ============ -->
 <header class="topbar">
-  <a href="#inicio" class="tb-brand" aria-label="Cristian Ruiz — inicio">
+  <a href="#inicio" class="tb-brand">
     <span class="logo">CR</span>
     <span>CRISTIAN<em>://</em>DEV<span class="ver">v2.0</span></span>
   </a>
@@ -1578,7 +1590,7 @@ section { scroll-margin-top: calc(var(--topbar-h) + 14px); }
         <div class="avatar-block rv">
           <div class="avatar">
             <span class="avatar-ring"></span>
-            <img class="avatar-photo" src="assets/images/Foto HV.webp" alt="Fotografía de Cristian Camilo Ruiz Ospina">
+            <img class="avatar-photo" src="assets/images/Foto HV.webp" width="912" height="1136" alt="Fotografía de Cristian Camilo Ruiz Ospina" fetchpriority="high" decoding="async">
             <span class="tag">OPERATOR · ONLINE</span>
           </div>
           <div class="avatar-meta">
@@ -2128,7 +2140,7 @@ section { scroll-margin-top: calc(var(--topbar-h) + 14px); }
       if (!bootEl || bootEl.classList.contains('done')) return;
       bootEl.classList.add('done');
       try { sessionStorage.setItem('cr-boot', '1'); } catch (e) {}
-      setTimeout(function () { if (bootEl && bootEl.parentNode) bootEl.parentNode.removeChild(bootEl); }, 650);
+      setTimeout(function () { if (bootEl && bootEl.parentNode) bootEl.parentNode.removeChild(bootEl); }, 350);
       startTyped();
     }
 
@@ -2137,7 +2149,7 @@ section { scroll-margin-top: calc(var(--topbar-h) + 14px); }
     var lines = $$('.boot-line', bootEl);
     var fill = $('#boot-fill');
     var i = 0;
-    var stepMs = 260;
+    var stepMs = 100;
     var timer = setInterval(function () {
       if (i < lines.length) {
         lines[i].classList.add('on');
@@ -2146,12 +2158,12 @@ section { scroll-margin-top: calc(var(--topbar-h) + 14px); }
       } else {
         clearInterval(timer);
         if (fill) fill.style.width = '100%';
-        setTimeout(finish, 380);
+        setTimeout(finish, 120);
       }
     }, stepMs);
 
     bootEl.addEventListener('click', function () { clearInterval(timer); finish(); });
-    setTimeout(function () { clearInterval(timer); finish(); }, 3200);
+    setTimeout(function () { clearInterval(timer); finish(); }, 900);
   })();
 
   /* ---------- BACKGROUND CANVAS ---------- */
